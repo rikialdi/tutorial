@@ -1,0 +1,49 @@
+Download XAMPP in url : https://www.apachefriends.org/download.html <for Linux>
+
+# yum install wget
+# download lampp (ops 1) : http://www.mediafire.com/file/me7q99pqa8lm6b5/xampp-linux-x64-5.6.28-0-installer.zip
+# download lampp (ops 2) : http://download1486.mediafire.com/lo140x81rylg/juhhe1f63ui8s53/xampp-linux-x64-5.6.28-0-installer.run
+# wget http://download1770.mediafire.com/3wkk4f3hdrlg/me7q99pqa8lm6b5/xampp-linux-x64-5.6.28-0-installer.zip
+# chmod +x xampp-linux-x64-5.6.28-0-installer.run
+# ./xampp-linux-x64-5.6.28-0-installer.run
+# XAMPP Developer Files [Y/n] :y
+# Is the selection above correct? [Y/n]: y
+# Press [Enter] to continue : <enter>
+# Do you want to continue? [Y/n]: y
+
+ Merbuah port di LAMPP 
+ # cd /opt/lampp/etc/
+ # nano httpd.conf
+ # Listen 80 -> Listen 8085
+ # cd /opt/lampp/etc/extra 
+ # nano httpd-ssl.conf
+ # Listen 443 -> Listen 8086
+ # ./lampp stop 
+ # ./lampp start
+
+-----------------------------------------
+Error: 
+  Stopping XAMPP for Linux 5.6.28-0...
+  XAMPP: Stopping Apache...fail.
+  apachectl returned 1.
+  XAMPP: Stopping MySQL...not running.
+  XAMPP: Stopping ProFTPD...not running.
+ 
+ # sudo rm -f /opt/lampp/logs/httpd.pid
+ # ./lampp stop 
+ # ./lampp start
+ 
+-----------------------------------------
+Error:
+(98)Address already in use: AH00072: make_sock: could not bind to address [::]:8086
+(98)Address already in use: AH00072: make_sock: could not bind to address 0.0.0.0:8086
+no listening sockets available, shutting down
+AH00015: Unable to open logs
+ 
+ # cek error : nano /opt/lampp/logs/error_log
+ # nano /opt/lampp/etc/extra/httpd-ssl.conf
+ # ubah port sebelumnya, ganti dengan 445
+ 
+ 
+ 
+Created by: lani.asep@lawencon.com
