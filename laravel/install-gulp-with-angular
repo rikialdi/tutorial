@@ -1,0 +1,15 @@
+Install gulp globally.
+
+npm install -g gulp
+Install gulp locally in the project.
+
+npm install gulp
+Add below line in your package.json
+
+"scripts": {
+      "gulp": "gulp"
+ }
+Run gulp.
+
+npm run gulp
+This worked for me.
