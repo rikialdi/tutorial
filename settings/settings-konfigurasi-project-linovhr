@@ -29,6 +29,9 @@ php artisan cache:clear
 
 php artisan serve
 
+.htaccess
+Header set Access-Control-Allow-Origin "*"
+
 ERROR :
 The requested package xethron/migrations-generator could not be found in any version
 # pastikan composer terinstall dengan versi terbaru :
