@@ -1,0 +1,7 @@
+Contoh <git hash commit>:
+- commit c0634e27774df832ca703fada0bd15be26fd4961
+- coomit a8a2638bb15d3fac828362f301ed360b42c263cf
+
+git cherry-pick <git hash commit>
+atau
+git cherry-pick -m 1 <git hash commit>
