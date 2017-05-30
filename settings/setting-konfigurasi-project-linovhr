@@ -98,6 +98,7 @@ reboot -h now
 Open Port :
 iptables -A INPUT -m state --state NEW -p tcp --dport 8080 -j ACCEPT
 /sbin/service iptables save
+iptables -L -n
 
 Eksport database :
 psql -H localhost -d nama_database -U postgres -f nama_file_database
