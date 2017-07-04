@@ -3,9 +3,6 @@ Step-by-step Install PostgreSQL 9.2 atau lebih tinggi dan Pgadmin3 di Centos 6.6
 1.  Download versi postgres PostgreSQL 9.2 atau lebih tinggi untuk Centos6 : 
     https://yum.postgresql.org/repopackages.php
     
-    Install postgresql version 9.5:
-    wget https://download.postgresql.org/pub/repos/yum/9.5/redhat/rhel-7-x86_64/pgdg-centos95-9.5-3.noarch.rpm
-    
 2.  -
 3.  Jalankan klik dan install file yang sudah download tadi
     # yum install pgdg-centos92-9.2-8.noarch.rpm 
@@ -73,6 +70,10 @@ Catatan Lanjutan:
     
     ex: ALTER USER nama_user WITH SUPERUSER;
 
+ERROR:
+loaded (/usr/lib/systemd/system/postgresql-9.2.service; disabled; vendor preset: disabled
+
+https://stackoverflow.com/questions/35492893/unable-to-start-postgresql-9-5-on-centos-7
 
 Selesai, berikutnya silahkan jalankan pgAdminnya dan test dengan database.
 
