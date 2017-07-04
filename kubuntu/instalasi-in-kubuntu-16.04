@@ -76,7 +76,7 @@ Step by step instalasi software di Kubuntu 16.04
 
    # ERROR :
      XAMPP is currently only availably as 32 bit application. Please use a 32bit compatibility library for your system
-   # https://cuongk6t.wordpress.com/2011/11/14/xampp-and-centos-664bit/
+   # https://cuongk6t.wordpress.com/2012/04/17/how-to-install-xampp-on-centos6-x86-64/
 
 3. Install Node.js
    # sudo apt-get install build-essential
