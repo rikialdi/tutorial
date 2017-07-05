@@ -12,6 +12,13 @@ Step-by-step Install PostgreSQL 9.2 atau lebih tinggi dan Pgadmin3 di Centos 6.6
     yum install postgresql92 postgresql92-server
 --  Cek versi dari postgresql
     psql --version
+    
+    Centos 7:
+    # /usr/pgsql-9.5/bin/postgresql95-setup initdb
+    # systemctl enable postgresql-9.5.service
+    # systemctl start postgresql-9.5.service 
+    
+    Centos 6:
 6.  Membuat data/tabel default, berikan nama teserah kita
     service postgresql-9.2 initdb
 7.  Menjalankan postgresql, pastikan terdapat status [OK], dan untuk merestart
