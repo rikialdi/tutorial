@@ -1,0 +1,44 @@
+menampilkan nilai apabila listbox di klik , ambil id, tampilkan berdasarkan id yang diambil ke listbob baru
+
+1 bikin header di zul dengan value
+ value="${arg.header.CYCLE_COUNT_ID}"
+2.  seter and getter = header : letakkan di afterdocompose
+   header = (cycle_counting_SG) args.get("header");
+2 bikin method, taro di doaftercompose
+ showDetail();
+//        setListboxRenderer();
+//        setStatusAddLine();
+        
+       model = new Model();
+      // refresh();
+        setListboxRenderer();
+        
+        dengan isi m,ethod
+        
+          private void showDetail() {
+        detailList = model.listDetail_cycle_count_controler(txtCYCLE_COUNT_ID.getText().trim());
+        refreshDetail();
+    }
+      private void refreshDetail() {
+        detailModel = new ListModelList<>(detailList);
+        listbox.setModel(detailModel);
+    }
+    
+    
+    2. ikutin model dan iplm. dan database. ok
+    pada model
+      public List<cycle_counting_SG> listDetail_cycle_count_controler(String cy_count_no) {
+        Map map = new HashMap<>();
+        map.put("In_CYCLE_COUNT_ID", cy_count_no);
+        showLog(map, "List Detail");
+        return impl.listDetail_cycle_count_controler(map);
+    }
+    
+    pada class impl
+    public List<cycle_counting_SG> listDetail_cycle_count_controler(Map map) {
+        try (SqlSession session = sqlSessionFactory.openSession()) {
+            List<cycle_counting_SG> list = session.selectList("Mapper.listCycleCounting_controler", map);
+            return list;
+        }
+        
+        ok
