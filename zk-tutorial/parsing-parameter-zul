@@ -6,3 +6,4 @@
             map.put("header", header);
 3. pada controler : 
      header = (DistOrdToTech) args.get("header");
+hasilketika lisbox di klik per row
