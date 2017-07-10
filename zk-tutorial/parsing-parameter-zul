@@ -1,0 +1,8 @@
+1. pada zul : pada texkfield
+ value="${arg.header.WH_ID}"/> 
+2. pada list : bikin headeruntuk parsing
+   Map map = new HashMap();
+            map.put("controller", controller);
+            map.put("header", header);
+3. pada controler : 
+     header = (DistOrdToTech) args.get("header");
