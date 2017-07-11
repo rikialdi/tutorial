@@ -1,0 +1,59 @@
+1. bikin database
+ <select id="ListLogHistory" parameterType="map" resultType="com.telkom.seadhistory_SG">
+        SELECT sd,
+       
+         approved_date
+    FROM TABLE (sdsds (
+        
+         #{InSerialNo,mode=IN,jdbcType=VARCHAR}
+        ))
+    ORDER BY transaction_Date
+    </select>
+     <select id="search_Log_history" parameterType="map" resultType="com.telkomding_SG">
+        select *  FROM TABLE (ssds (
+        
+         #{InSerialNo,mode=IN,jdbcType=VARCHAR}
+        ))
+      
+    </select>
+    
+    2. pada class yng akan diambil nilai texboxnya :
+     log_history controller = new log_history();
+       //controller.setList(this);
+       Map map = new HashMap();
+        map.put("controller", controller);
+       map.put("key_O_FSN_TSN", O_FSN_TSN);
+        final Window win = (Window) Executions.createComponents("/Searcing_ss.zul", null, map);
+        win.doModal();
+        
+   3. pada zul yg akan mengambil nilai texboknya:
+      <textbox id="txt_OFN"    readonly="true" value="${arg.key_O_FSN_TSN}"/>
+               
+               
+               
+               
+               
+               
+  4. pada class yang akan mengambill nilai texbox
+   public void refresh() {
+      
+        Map map = new HashMap<String, Object>();
+       map.put("InSerialNo", txt_OFN.getText().trim());
+        List<log_history_SG> list = impl.ListLogHistory(map);
+        listbox_logHistory.setModel(new ListModelList<log_history_SG>(list));
+        alert("nilai ="+txt_OFN.getValue());
+    }
+    
+    5.class implementys :
+    public List<log_history_SG> ListLogHistory(Map map) {
+        
+         SqlSession session = sqlSessionFactory.openSession();
+        try {
+            List<log_history_SG> list = session.selectList("Mapper.ListLogHistory", map);
+            return list;
+        } finally {
+            session.close();
+        }
+    }
+    
+    selesai :
