@@ -1,0 +1,6 @@
+  int total = 0;
+                    for(tech_stock_balance_SG tt : detailList){
+                        total = total + Integer.parseInt(tt.getQty());
+                    }
+                            System.out.println("QTY : " + total);
+                     txtTotalQTY.setText("" + total);
