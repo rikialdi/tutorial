@@ -1,0 +1,9 @@
+ ScanBarcodeController controller = new ScanBarcodeController();
+           controller.setListener(new ScanBarcodeController.Listener() {
+                @Override
+                public void onSubmitScan() {
+                //    SCANNED = true;
+            showDetail();
+            setListboxRenderer();
+                }
+            });
